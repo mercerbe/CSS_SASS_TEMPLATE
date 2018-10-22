@@ -13,22 +13,65 @@ Dark green: #28b485
   padding: 0;
   box-sizing: border-box;
 }
-
 /* from inheritence */
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400px;
   font-size: 16px;
   line-height: 1.7;
-  color: "#777";
+  color: #777;
+  padding: 30px;
 }
 
 /* vh is viewport, specify image via url, position at top */
 .header {
   height: 95vh;
   /* gradients run across colors, set and select colors from pre-defined template, gradient will lay over image */
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485),
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgba(48, 180, 131, 0.8)
+    ),
     url(../img/Filler.jpg);
   background-size: cover;
   background-position: top;
+  /* clip path reshapes an image top left, top right, btm right, btm left*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+}
+
+/* logo header */
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+.logo {
+  height: 35px;
+}
+
+/* heading */
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  background-color: red;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 100px;
+  letter-spacing: 15px;
 }
