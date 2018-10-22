@@ -49,40 +49,89 @@ body {
 .logo {
   height: 35px;
 }
+/* glitch on hover */
+.logo:hover {
+  animation: moveInLeft 2s ease-in;
+}
 
 /* heading */
 .text-box {
   position: absolute;
   top: 40%;
   left: 50%;
+  text-align: center;
   background-color: red;
   transform: translate(-50%, -50%);
-  text-align: center;
+  padding: 0px 10px;
 }
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  backface-visibility: hidden;
 }
 .heading-primary-main {
   display: block;
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+  /* animation */
+  animation-name: moveInLeft;
+  animation-duration: 1.5s;
+  /* wait for load to fire */
+  /* animation-delay: 0.5s; */
+  /* multiple animations */
+  /* animation-iteration-count: 3; */
+  /* animation timing */
+  animation-timing-function: ease-in;
 }
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 100px;
-  letter-spacing: 15px;
+  letter-spacing: 10px;
+  animation: moveInRight 1.5s ease-in;
 }
 /* animation for heading text for performace, best to only animate 2 properties */
-@@keyframes moveInLeft {
+@keyframes moveInLeft {
   /* start */
   0% {
     opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
   }
   /* finish */
   100% {
     opacity: 1;
+    transform: translateX(0);
   }
+}
+@keyframes moveInRight {
+  /* start */
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  /* finish */
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* button in header */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  margin-top: 10px;
+}
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
