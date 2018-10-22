@@ -75,3 +75,14 @@ body {
   font-weight: 100px;
   letter-spacing: 15px;
 }
+/* animation for heading text for performace, best to only animate 2 properties */
+@@keyframes moveInLeft {
+  /* start */
+  0% {
+    opacity: 0;
+  }
+  /* finish */
+  100% {
+    opacity: 1;
+  }
+}
